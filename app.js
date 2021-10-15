@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const do
+const dotenv = require('dotenv').config()
 
 const authRoute = require('./routes/authRoute')
 
@@ -16,7 +16,7 @@ mongoose.connect(process.env.DBURL,
     useUnifiedTopology: true
   }
 ).then(() => console.log('DB connected '))
-app.get('/', (req, res) => res.json({mes:'welcome'}))
+app.get('/', (req, res) => res.json({ mes: 'welcome' }))
 
 app.listen(5050, () => {
   console.log('app is running')
